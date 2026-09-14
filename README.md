@@ -359,3 +359,13 @@ Hubungan antara kedua file dibuat menggunakan `<link>` pada bagian `<head>`.
 
 ---
 
+## 7. Dokumentasi
+
+<img width="1917" height="1078" alt="Screenshot 2026-09-14 194044" src="https://github.com/user-attachments/assets/46edf94b-c118-4b14-953e-7eabc2536a60" />
+
+<img width="758" height="661" alt="Screenshot 2026-09-14 194112" src="https://github.com/user-attachments/assets/ed94a62d-e69e-453c-9ede-c03ab60ab08a" />
+
+<img width="722" height="978" alt="Screenshot 2026-09-14 194129" src="https://github.com/user-attachments/assets/78de9cf2-cfd2-4493-b847-82659ceca6ec" />
+
+<img width="1917" height="975" alt="Screenshot 2026-09-14 194058" src="https://github.com/user-attachments/assets/74e80f11-02ac-40ea-9a37-64dc908262be" />
+
