@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+```
+<header>
+    <h1>Todo List</h1>
+    <p>Tugas 1 - Pemrograman Web</p>
+</header>
+
+<main>
+
+    <section class="todo-panel">
+        <div class="panel-header">
+            <h2>My Todos</h2>
+            <button type="button">+ New Todo</button>
+        </div>
+
+        <ul class="todo-list">
+            <li class="todo-item active">
+                <input type="checkbox" id="todo1">
+                <label for="todo1">
+                    <strong>Learn HTML</strong>
+                    <span>Practice semantic HTML elements</span>
+                </label>
+            </li>
+
+            <li class="todo-item">
+                <input type="checkbox" id="todo2">
+                <label for="todo2">
+                    <strong>Learn CSS</strong>
+                    <span>Practice Flexbox and Grid</span>
+                </label>
+            </li>
+
+            <li class="todo-item">
+                <input type="checkbox" id="todo3">
+                <label for="todo3">
+                    <strong>Finish assignment</strong>
+                    <span>Complete The Style Warrior task</span>
+                </label>
+            </li>
+
+            <li class="todo-item">
+                <input type="checkbox" id="todo4">
+                <label for="todo4">
+                    <strong>Read documentation</strong>
+                    <span>Review HTML and CSS documentation</span>
+                </label>
+            </li>
+        </ul>
+    </section>
+
+    <aside class="detail-panel">
+
+        <div class="panel-header">
+            <h2>Todo Detail</h2>
+        </div>
+
+        <form class="todo-editor">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value="Learn HTML"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="6"
+                >Practice semantic HTML elements</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status">
+                    <option value="todo">To Do</option>
+                    <option value="progress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <button type="button">Delete</button>
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+
+    </aside>
+
+</main>
+
+<section class="new-todo">
+    <h2>Create New Todo</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="new-title">Title</label>
+            <input
+                type="text"
+                id="new-title"
+                name="new-title"
+                placeholder="Enter todo title"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="new-description">Description</label>
+            <textarea
+                id="new-description"
+                name="new-description"
+                rows="4"
+                placeholder="Enter todo description"
+            ></textarea>
+        </div>
+
+        <button type="submit">Create Todo</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; Dhanishara Zaschya_5025251235</p>
+</footer>
+```
+
+</body>
+</html>
