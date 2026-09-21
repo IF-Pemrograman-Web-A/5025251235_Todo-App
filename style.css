@@ -20,17 +20,12 @@ HEADER
 ========================= */
 
 header {
-background-color: #222222;
-color: white;
-padding: 24px 40px;
-}
-
-header h1 {
-margin-bottom: 6px;
-}
-
-header p {
-color: #cccccc;
+    background-color: #222222;
+    color: white;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* =========================
@@ -285,4 +280,64 @@ main {
     margin-right: 16px;
 }
 
+}
+
+/* =========================
+DARK MODE
+========================= */
+
+body.dark-mode {
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+body.dark-mode header {
+    background-color: #555555;
+    color: white;
+}
+
+body.dark-mode .todo-panel,
+body.dark-mode .detail-panel,
+body.dark-mode .new-todo {
+    background-color: #333333;
+    color: #eeeeee;
+}
+
+body.dark-mode .todo-item {
+    border-color: #555555;
+}
+
+body.dark-mode .todo-item:hover {
+    background-color: #444444;
+}
+
+body.dark-mode .todo-item.active {
+    border-color: #eeeeee;
+    background-color: #444444;
+}
+
+body.dark-mode .todo-item span {
+    color: #bbbbbb;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background-color: #444444;
+    color: #eeeeee;
+    border-color: #666666;
+}
+
+body.dark-mode .form-actions button:first-child {
+    background-color: #555555;
+    color: white;
+}
+
+body.dark-mode footer {
+    color: #bbbbbb;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: white;
+    color: #222222;
 }
