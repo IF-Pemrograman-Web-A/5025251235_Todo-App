@@ -11,8 +11,12 @@
 
 ```
 <header>
-    <h1>Todo List</h1>
-    <p>Tugas 1 - Pemrograman Web</p>
+    <div>
+        <h1>Todo List</h1>
+        <p>Tugas 1 - Pemrograman Web</p>
+    </div>
+
+    <button type="button" id="theme-toggle">Dark Mode</button>
 </header>
 
 <main>
@@ -20,10 +24,10 @@
     <section class="todo-panel">
         <div class="panel-header">
             <h2>My Todos</h2>
-            <button type="button">+ New Todo</button>
+            <button type="button" id="new-todo-button">+ New Todo</button>
         </div>
 
-        <ul class="todo-list">
+        <ul class="todo-list" id="todo-list">
             <li class="todo-item active">
                 <input type="checkbox" id="todo1">
                 <label for="todo1">
@@ -64,7 +68,7 @@
             <h2>Todo Detail</h2>
         </div>
 
-        <form class="todo-editor">
+        <form class="todo-editor" id="todo-editor">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input
@@ -94,7 +98,7 @@
             </div>
 
             <div class="form-actions">
-                <button type="button">Delete</button>
+                <button type="button" id="delete-button">Delete</button>
                 <button type="submit">Save Changes</button>
             </div>
         </form>
@@ -106,7 +110,7 @@
 <section class="new-todo">
     <h2>Create New Todo</h2>
 
-    <form>
+    <form id="new-todo-form">
         <div class="form-group">
             <label for="new-title">Title</label>
             <input
@@ -135,6 +139,6 @@
     <p>&copy; Dhanishara Zaschya_5025251235</p>
 </footer>
 ```
-
+<script src="script.js"></script>
 </body>
 </html>
