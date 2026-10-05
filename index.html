@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,23 +8,47 @@
 </head>
 <body>
 
-```
 <header>
-    <h1>Todo List</h1>
-    <p>Tugas 1 - Pemrograman Web</p>
+    <div>
+        <h1>Todo List</h1>
+        <p>Tugas 3 - Pemrograman Web</p>
+    </div>
+
+    <button
+        type="button"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+    >
+        Dark Mode
+    </button>
 </header>
 
 <main>
 
-    <section class="todo-panel">
+    <section class="todo-panel" aria-labelledby="todo-list-title">
         <div class="panel-header">
-            <h2>My Todos</h2>
-            <button type="button">+ New Todo</button>
+            <h2 id="todo-list-title">My Todos</h2>
+
+            <button
+                type="button"
+                id="new-todo-button"
+                aria-label="Create a new todo"
+            >
+                + New Todo
+            </button>
         </div>
 
-        <ul class="todo-list">
+        <ul
+            class="todo-list"
+            id="todo-list"
+            aria-label="Todo list"
+        >
             <li class="todo-item active">
-                <input type="checkbox" id="todo1">
+                <input
+                    type="checkbox"
+                    id="todo1"
+                    aria-label="Complete Learn HTML"
+                >
                 <label for="todo1">
                     <strong>Learn HTML</strong>
                     <span>Practice semantic HTML elements</span>
@@ -33,7 +56,11 @@
             </li>
 
             <li class="todo-item">
-                <input type="checkbox" id="todo2">
+                <input
+                    type="checkbox"
+                    id="todo2"
+                    aria-label="Complete Learn CSS"
+                >
                 <label for="todo2">
                     <strong>Learn CSS</strong>
                     <span>Practice Flexbox and Grid</span>
@@ -41,7 +68,11 @@
             </li>
 
             <li class="todo-item">
-                <input type="checkbox" id="todo3">
+                <input
+                    type="checkbox"
+                    id="todo3"
+                    aria-label="Complete Finish assignment"
+                >
                 <label for="todo3">
                     <strong>Finish assignment</strong>
                     <span>Complete The Style Warrior task</span>
@@ -49,7 +80,11 @@
             </li>
 
             <li class="todo-item">
-                <input type="checkbox" id="todo4">
+                <input
+                    type="checkbox"
+                    id="todo4"
+                    aria-label="Complete Read documentation"
+                >
                 <label for="todo4">
                     <strong>Read documentation</strong>
                     <span>Review HTML and CSS documentation</span>
@@ -58,13 +93,17 @@
         </ul>
     </section>
 
-    <aside class="detail-panel">
+    <aside
+        class="detail-panel"
+        aria-labelledby="todo-detail-title"
+    >
 
         <div class="panel-header">
-            <h2>Todo Detail</h2>
+            <h2 id="todo-detail-title">Todo Detail</h2>
         </div>
 
-        <form class="todo-editor">
+        <form class="todo-editor" id="todo-editor">
+
             <div class="form-group">
                 <label for="title">Title</label>
                 <input
@@ -72,6 +111,7 @@
                     id="title"
                     name="title"
                     value="Learn HTML"
+                    required
                 >
             </div>
 
@@ -85,6 +125,17 @@
             </div>
 
             <div class="form-group">
+                <span class="form-label">Image</span>
+                <img
+                    id="todo-img"
+                    src=""
+                    alt="Todo image preview"
+                    width="150"
+                    hidden
+                >
+            </div>
+
+            <div class="form-group">
                 <label for="status">Status</label>
                 <select id="status" name="status">
                     <option value="todo">To Do</option>
@@ -93,20 +144,44 @@
                 </select>
             </div>
 
-            <div class="form-actions">
-                <button type="button">Delete</button>
-                <button type="submit">Save Changes</button>
+            <div class="form-group">
+                <label for="notification-time">
+                    Notification Time
+                </label>
+                <input
+                    type="datetime-local"
+                    id="notification-time"
+                    name="notification-time"
+                >
             </div>
+
+            <div class="form-actions">
+                <button
+                    type="button"
+                    id="delete-button"
+                >
+                    Delete
+                </button>
+
+                <button type="submit">
+                    Save Changes
+                </button>
+            </div>
+
         </form>
 
     </aside>
 
 </main>
 
-<section class="new-todo">
-    <h2>Create New Todo</h2>
+<section
+    class="new-todo"
+    aria-labelledby="create-todo-title"
+>
+    <h2 id="create-todo-title">Create New Todo</h2>
 
-    <form>
+    <form id="new-todo-form">
+
         <div class="form-group">
             <label for="new-title">Title</label>
             <input
@@ -114,6 +189,7 @@
                 id="new-title"
                 name="new-title"
                 placeholder="Enter todo title"
+                required
             >
         </div>
 
@@ -127,14 +203,40 @@
             ></textarea>
         </div>
 
-        <button type="submit">Create Todo</button>
+        <div class="form-group">
+            <label for="new-image">Image</label>
+            <input
+                type="file"
+                id="new-image"
+                name="new-image"
+                accept="image/*"
+                capture="environment"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="new-notification-time">
+                Notification Time
+            </label>
+
+            <input
+                type="datetime-local"
+                id="new-notification-time"
+                name="new-notification-time"
+            >
+        </div>
+
+        <button type="submit">
+            Create Todo
+        </button>
+
     </form>
 </section>
 
 <footer>
     <p>&copy; Dhanishara Zaschya_5025251235</p>
 </footer>
-```
 
+<script src="script.js"></script>
 </body>
 </html>
