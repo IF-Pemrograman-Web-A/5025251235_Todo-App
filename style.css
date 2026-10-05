@@ -3,16 +3,16 @@ GENERAL
 ========================= */
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-font-family: Arial, sans-serif;
-background-color: #ecb4e0;
-color: #222222;
-min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #ecb4e0;
+    color: #222222;
+    min-height: 100vh;
 }
 
 /* =========================
@@ -20,17 +20,12 @@ HEADER
 ========================= */
 
 header {
-background-color: #222222;
-color: white;
-padding: 24px 40px;
-}
-
-header h1 {
-margin-bottom: 6px;
-}
-
-header p {
-color: #cccccc;
+    background-color: #222222;
+    color: white;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* =========================
@@ -38,12 +33,12 @@ MAIN - TWO PANELS
 ========================= */
 
 main {
-display: grid;
-grid-template-columns: 1fr 1.5fr;
-gap: 24px;
-max-width: 1200px;
-margin: 30px auto;
-padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 24px;
 }
 
 /* =========================
@@ -52,21 +47,21 @@ PANELS
 
 .todo-panel,
 .detail-panel {
-background-color: white;
-border-radius: 12px;
-padding: 24px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .panel-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .panel-header h2 {
-font-size: 22px;
+    font-size: 22px;
 }
 
 /* =========================
@@ -74,20 +69,33 @@ BUTTON
 ========================= */
 
 button {
-border: none;
-border-radius: 8px;
-padding: 10px 16px;
-cursor: pointer;
-font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
 }
 
 .panel-header button {
-background-color: #222;
-color: white;
+    background-color: #222;
+    color: white;
 }
 
 .panel-header button:hover {
-background-color: #444;
+    background-color: #444;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 /* =========================
@@ -95,47 +103,47 @@ TODO LIST
 ========================= */
 
 .todo-list {
-list-style: none;
+    list-style: none;
 }
 
 .todo-item {
-display: flex;
-align-items: flex-start;
-gap: 12px;
-padding: 16px;
-border: 1px solid #e0e0e0;
-border-radius: 8px;
-margin-bottom: 12px;
-cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
 }
 
 .todo-item:hover {
-background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 .todo-item.active {
-border-color: #222;
-background-color: #f2f2f2;
+    border-color: #222;
+    background-color: #f2f2f2;
 }
 
 .todo-item input {
-margin-top: 4px;
+    margin-top: 4px;
 }
 
 .todo-item label {
-display: flex;
-flex-direction: column;
-gap: 5px;
-cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 }
 
 .todo-item strong {
-font-size: 16px;
+    font-size: 16px;
 }
 
 .todo-item span {
-font-size: 13px;
-color: #777;
+    font-size: 13px;
+    color: #777;
 }
 
 /* =========================
@@ -143,42 +151,43 @@ FORM
 ========================= */
 
 .todo-editor {
-display: flex;
-flex-direction: column;
-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .form-group {
-display: flex;
-flex-direction: column;
-gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.form-group label {
-font-weight: bold;
-font-size: 14px;
+.form-group label,
+.form-label {
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
-width: 100%;
-padding: 12px;
-border: 1px solid #d5d5d5;
-border-radius: 8px;
-font-family: inherit;
-font-size: 14px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
 }
 
 .form-group textarea {
-resize: vertical;
+    resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-outline: none;
-border-color: #222;
+    outline: none;
+    border-color: #222;
 }
 
 /* =========================
@@ -186,23 +195,23 @@ FORM ACTIONS
 ========================= */
 
 .form-actions {
-display: flex;
-justify-content: flex-end;
-gap: 10px;
-margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .form-actions button:first-child {
-background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 .form-actions button:last-child {
-background-color: #222;
-color: white;
+    background-color: #222;
+    color: white;
 }
 
 .form-actions button:hover {
-opacity: 0.8;
+    opacity: 0.8;
 }
 
 /* =========================
@@ -210,28 +219,47 @@ NEW TODO FORM
 ========================= */
 
 .new-todo {
-max-width: 1200px;
-margin: 0 auto 30px;
-padding: 24px;
-background-color: white;
-border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .new-todo h2 {
-margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .new-todo form {
-display: flex;
-flex-direction: column;
-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .new-todo button {
-align-self: flex-start;
-background-color: #222;
-color: white;
+    align-self: flex-start;
+    background-color: #222;
+    color: white;
+}
+
+/* =========================
+IMAGE
+========================= */
+
+#todo-img {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.todo-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 8px;
 }
 
 /* =========================
@@ -239,10 +267,10 @@ FOOTER
 ========================= */
 
 footer {
-text-align: center;
-padding: 24px;
-color: #777;
-font-size: 14px;
+    text-align: center;
+    padding: 24px;
+    color: #777;
+    font-size: 14px;
 }
 
 /* =========================
@@ -251,38 +279,108 @@ RESPONSIVE
 
 @media (max-width: 768px) {
 
-header {
-    padding: 20px;
+    header {
+        padding: 20px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        padding: 0 16px;
+    }
+
+    .todo-panel,
+    .detail-panel,
+    .new-todo {
+        padding: 20px;
+    }
+
+    .panel-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+    .new-todo {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
 }
 
-main {
-    grid-template-columns: 1fr;
-    margin-top: 20px;
-    padding: 0 16px;
+/* =========================
+DARK MODE
+========================= */
+
+body.dark-mode {
+    background-color: #222222;
+    color: #eeeeee;
 }
 
-.todo-panel,
-.detail-panel,
-.new-todo {
-    padding: 20px;
+body.dark-mode header {
+    background-color: #555555;
+    color: white;
 }
 
-.panel-header {
-    align-items: flex-start;
-    gap: 12px;
+body.dark-mode .todo-panel,
+body.dark-mode .detail-panel,
+body.dark-mode .new-todo {
+    background-color: #333333;
+    color: #eeeeee;
 }
 
-.form-actions {
-    flex-direction: column;
+body.dark-mode .todo-item {
+    border-color: #555555;
 }
 
-.form-actions button {
-    width: 100%;
+body.dark-mode .todo-item:hover {
+    background-color: #444444;
 }
 
-.new-todo {
-    margin-left: 16px;
-    margin-right: 16px;
+body.dark-mode .todo-item.active {
+    border-color: #eeeeee;
+    background-color: #444444;
 }
 
+body.dark-mode .todo-item span {
+    color: #bbbbbb;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+    background-color: #444444;
+    color: #eeeeee;
+    border-color: #666666;
+}
+
+body.dark-mode .form-actions button:first-child {
+    background-color: #555555;
+    color: white;
+}
+
+body.dark-mode footer {
+    color: #bbbbbb;
+}
+
+body.dark-mode #theme-toggle {
+    background-color: white;
+    color: #222222;
+}
+
+/* =========================
+DARK MODE - FOCUS
+========================= */
+
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode select:focus-visible {
+    outline-color: #ffffff;
 }
