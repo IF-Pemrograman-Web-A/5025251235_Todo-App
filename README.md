@@ -284,6 +284,12 @@ Pengujian dilakukan untuk memastikan setiap fitur utama berjalan sesuai fungsiny
 
 Hasil pengujian akhir perlu disesuaikan dengan hasil pengujian aktual pada lingkungan lokal.
 
+<img width="1902" height="970" alt="Screenshot 2026-10-18 195603" src="https://github.com/user-attachments/assets/a1fc1728-71ea-41a9-9522-555de148ec22" />
+
+<img width="1897" height="967" alt="Screenshot 2026-10-18 195631" src="https://github.com/user-attachments/assets/8372271a-8551-4d44-b32b-8c7c8359035f" />
+
+<img width="1902" height="971" alt="Screenshot 2026-10-18 195655" src="https://github.com/user-attachments/assets/f3297b08-0c6f-45bb-923b-261aab51e303" />
+
 ## 12. Catatan Implementasi
 
 - Identitas Personal menggunakan session dan `owner_key`, bukan sistem autentikasi akun dengan username dan password.
