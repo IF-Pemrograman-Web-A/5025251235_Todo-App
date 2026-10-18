@@ -1,371 +1,301 @@
-# [E01a] The Style Warrior - Todo List App
+# E04 — The Iron Citadel: Todo App
 
-
-| Nama               | NRP        | Kelas  |
-| ------------------ | ---------- | ------ |
-| Dhanishara Zaschya | 5025251235 | PWEB A |
-
-## Deskripsi
-
-Tugas ini merupakan implementasi tampilan **Todo List Webpage** menggunakan HTML dan CSS. Halaman dibuat sebagai antarmuka statis untuk menampilkan daftar tugas, melihat detail tugas, serta menyediakan form untuk membuat Todo baru.
-
-Pengembangan dilakukan dengan HTML semantic dan CSS eksternal. Layout menggunakan **CSS Grid** agar dua panel dapat ditampilkan berdampingan pada layar desktop dan berubah menjadi satu kolom pada layar yang lebih kecil.
+**Nama:** Dhanishara Zaschya Putri
+**NRP:** 5025251235  
+**Mata Kuliah:** Pemrograman Web 
+**Tugas:** E04 — The Iron Citadel
 
 ---
 
-## 1. Semantic HTML
+## 1. Deskripsi Proyek
 
-Struktur halaman menggunakan beberapa elemen semantic HTML5 agar setiap bagian halaman memiliki fungsi yang jelas. Elemen yang digunakan antara lain `<header>`, `<main>`, `<section>`, `<aside>`, dan `<footer>`.
+The Iron Citadel merupakan pengembangan dari Todo App pada praktikum sebelumnya. Aplikasi ini awalnya menggunakan HTML, CSS, JavaScript, dan IndexedDB untuk mengelola daftar tugas secara lokal di browser.
 
-### Header
+Pada praktikum E04, aplikasi dikembangkan menggunakan PHP dan MySQL agar data Todo dapat disimpan secara persisten di database. Aplikasi juga dilengkapi dengan menu Personal dan Shared untuk membedakan tugas pribadi dan tugas bersama.
 
-Bagian `<header>` digunakan untuk menampilkan identitas utama halaman berupa judul dan deskripsi singkat.
+Kode HTML dimigrasikan ke PHP dan dibagi menjadi beberapa file agar struktur program lebih modular, terorganisasi, dan mudah dipelihara. Selain itu, aplikasi mendukung operasi CRUD dan upload gambar sebagai implementasi tambahan file handling menggunakan PHP.
 
-```html
-<header>
-    <h1>Todo List</h1>
-    <p>Manage your tasks easily</p>
-</header>
-```
+## 2. Tujuan Praktikum
 
-Dengan demikian, pengguna dapat langsung mengetahui fungsi halaman ketika membukanya.
+Tujuan pengembangan aplikasi ini adalah:
 
-### Main
+1. Mengimplementasikan menu navigasi Personal dan Shared.
+2. Memigrasikan halaman HTML menjadi PHP dengan struktur modular.
+3. Membuat database MySQL beserta dummy data dalam file `data.sql`.
+4. Mengimplementasikan operasi Create, Read, Update, dan Delete (CRUD) menggunakan PHP.
+5. Mengimplementasikan file handling untuk upload dan penyimpanan gambar Todo.
+6. Mempertahankan tampilan responsif dan fitur Dark Mode pada aplikasi.
 
-Elemen `<main>` digunakan sebagai wadah untuk konten utama Todo List. Di dalamnya terdapat dua bagian utama, yaitu panel daftar Todo dan panel detail Todo.
+## 3. Fitur Aplikasi
 
-```html
-<main>
+### 3.1. Personal Todo
 
-    <section class="todo-panel">
-        ...
-    </section>
+Menu Personal digunakan untuk mengelola daftar tugas pribadi. Setiap sesi pengguna memperoleh `owner_key` yang digunakan untuk mengidentifikasi tugas pribadi miliknya.
 
-    <aside class="detail-panel">
-        ...
-    </aside>
+Fitur yang tersedia meliputi:
+- Membuat Todo baru.
+- Melihat daftar Todo.
+- Melihat dan mengubah detail Todo.
+- Mengubah status Todo.
+- Mengatur waktu notifikasi pada data Todo.
+- Menghapus Todo.
+- Mengunggah gambar saat membuat Todo.
 
-</main>
-```
+### 3.2. Shared Todo
 
-`<section>` digunakan untuk bagian daftar tugas, sedangkan `<aside>` digunakan untuk bagian detail atau editor Todo.
+Menu Shared digunakan untuk menampilkan daftar tugas bersama yang disimpan dalam database.
 
-### Footer
+Fitur yang tersedia meliputi:
+- Menampilkan daftar Todo dengan scope `shared`.
+- Membuat Todo bersama.
+- Melihat dan mengubah detail Todo bersama.
+- Mengubah status Todo.
+- Menghapus Todo bersama.
 
-Bagian `<footer>` digunakan untuk menampilkan informasi pada bagian paling bawah halaman.
+### 3.3. Status Todo
 
-```html
-<footer>
-    <p>&copy; 2026 Todo List. All rights reserved.</p>
-</footer>
-```
+Setiap Todo memiliki status yang menunjukkan perkembangan tugas.
 
----
+| Status | Keterangan |
+|---|---|
+| `todo` | Tugas belum dikerjakan. |
+| `progress` | Tugas sedang dikerjakan. |
+| `done` | Tugas telah selesai. |
 
-## 2. Layout Dua Panel
+### 3.4. Database Persistence
 
-Konten utama dibagi menjadi dua panel menggunakan **CSS Grid**.
+Data Todo disimpan dalam database MySQL sehingga perubahan data tetap tersedia setelah halaman dimuat ulang.
 
-* **Panel kiri** berisi daftar Todo yang tersedia.
-* **Panel kanan** berisi detail dan editor Todo yang dipilih.
+### 3.5. File Handling
 
-Struktur HTML kedua panel tersebut adalah:
+Aplikasi menyediakan fitur upload gambar pada proses pembuatan Todo. File gambar disimpan di folder `uploads/`, sedangkan lokasi file disimpan pada kolom `image_path` di database.
 
-```html
-<main>
+Validasi upload mencakup jenis file gambar yang diperbolehkan dan batas ukuran file maksimal 2 MB.
 
-    <section class="todo-panel">
-        <div class="panel-header">
-            <h2>My Todos</h2>
-            <button type="button">+ New Todo</button>
-        </div>
+### 3.6. User Interface
 
-        <ul class="todo-list">
-            ...
-        </ul>
-    </section>
+Aplikasi menggunakan desain pink aesthetic dengan warna cream, blush pink, dan dusty rose. Tampilan dilengkapi dengan:
+- Navigasi Personal dan Shared.
+- Panel daftar Todo dan detail Todo.
+- Form untuk membuat dan mengubah Todo.
+- Dark Mode dengan preferensi tema yang disimpan menggunakan `localStorage`.
+- Layout responsif untuk layar yang lebih kecil.
 
-    <aside class="detail-panel">
-        <div class="panel-header">
-            <h2>Todo Detail</h2>
-        </div>
+## 4. Teknologi yang Digunakan
 
-        <form class="todo-editor">
-            ...
-        </form>
-    </aside>
+| Teknologi | Penggunaan |
+|---|---|
+| HTML5 | Struktur halaman web. |
+| CSS3 | Styling, layout, responsivitas, dan Dark Mode. |
+| JavaScript | Interaksi antarmuka dan pengaturan tema. |
+| PHP | Pemrosesan data dan implementasi CRUD. |
+| MySQL | Penyimpanan data Todo. |
+| PDO | Koneksi database dan eksekusi query menggunakan prepared statements. |
+| Laragon | Lingkungan server lokal untuk menjalankan PHP dan MySQL. |
 
-</main>
-```
-
-Pengaturan layout dilakukan melalui properti `display: grid`.
-
-```css
-main {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 24px;
-}
-```
-
-`grid-template-columns` membuat panel terbagi menjadi dua kolom. Panel kanan dibuat sedikit lebih lebar karena menggunakan `1.5fr`, sedangkan panel kiri menggunakan `1fr`.
-
-Secara sederhana, pembagian layoutnya adalah:
+## 5. Struktur Folder
 
 ```text
-┌───────────────────┬────────────────────────────┐
-│                   │                            │
-│    My Todos       │       Todo Detail          │
-│                   │                            │
-│    Panel Kiri     │       Panel Kanan          │
-│                   │                            │
-└───────────────────┴────────────────────────────┘
+E04/
+├── index.php
+├── config.php
+├── menubar.php
+├── content.php
+├── functions.php
+├── script.js
+├── style.css
+├── data.sql
+└── uploads/
 ```
 
----
+Keterangan:
 
-## 3. Form Todo
+| File/Folder | Fungsi |
+|---|---|
+| `index.php` | Halaman utama, mengambil data dari database, menentukan scope aktif, dan menyusun halaman menggunakan file modular. |
+| `config.php` | Mengatur koneksi database menggunakan PDO dan menginisialisasi session pengguna. |
+| `menubar.php` | Menampilkan navigasi Personal dan Shared. |
+| `content.php` | Menampilkan daftar Todo, detail Todo, serta form Create, Update, dan Delete. |
+| `functions.php` | Memproses permintaan POST, operasi CRUD, validasi data, dan upload gambar. |
+| `script.js` | Mengatur Dark Mode dan menyimpan preferensi tema pada browser. |
+| `style.css` | Mengatur tampilan, warna, komponen, Dark Mode, dan responsivitas. |
+| `data.sql` | Berisi pembuatan database, struktur tabel, dan dummy data. |
+| `uploads/` | Menyimpan file gambar yang diunggah. |
 
-Panel kanan menyediakan form untuk melihat dan mengedit informasi Todo. Form terdiri dari beberapa input yang berhubungan dengan sebuah tugas.
+## 6. Struktur Database
 
-### Judul Todo
+Database yang digunakan bernama `todo_e04`, dengan tabel `todos`.
 
-Input teks digunakan untuk menampilkan judul tugas.
+### 6.1. Skema Tabel `todos`
 
-```html
-<div class="form-group">
-    <label for="title">Title</label>
-    <input
-        type="text"
-        id="title"
-        name="title"
-        value="Learn HTML"
-    >
-</div>
+| Kolom | Tipe Data | Keterangan |
+|---|---|---|
+| `id` | INT, AUTO_INCREMENT | Primary key setiap Todo. |
+| `title` | VARCHAR(255) | Judul Todo. |
+| `description` | TEXT | Deskripsi Todo. |
+| `status` | ENUM | Status Todo: `todo`, `progress`, atau `done`. |
+| `scope` | ENUM | Kategori Todo: `personal` atau `shared`. |
+| `owner_key` | VARCHAR(128) | Identitas sesi pemilik Todo pribadi. |
+| `image_path` | VARCHAR(255) | Lokasi file gambar yang diunggah. |
+| `notification_time` | DATETIME | Waktu notifikasi yang disimpan pada Todo. |
+| `created_at` | TIMESTAMP | Waktu pembuatan Todo. |
+| `updated_at` | TIMESTAMP | Waktu terakhir Todo diperbarui. |
+
+Kolom `id` menjadi primary key untuk membedakan setiap Todo. Kolom `scope` menentukan apakah Todo termasuk kategori Personal atau Shared, sedangkan `owner_key` digunakan untuk memfilter data pribadi berdasarkan sesi.
+
+### 6.2. Dummy Data
+
+File `data.sql` menyediakan contoh data awal untuk menguji aplikasi. Dummy data mencakup tugas seperti mempelajari HTML, mempelajari CSS, rapat tim, dan menyelesaikan tugas.
+
+Dummy data digunakan untuk membantu pengujian tampilan daftar Todo, detail tugas, dan pemisahan kategori.
+
+## 7. Implementasi CRUD
+
+### 7.1. Create
+
+Pengguna mengisi form pembuatan Todo yang berisi judul, deskripsi, status, waktu notifikasi, dan gambar jika diperlukan.
+
+Data diproses oleh `functions.php`, kemudian disimpan menggunakan query `INSERT` ke tabel `todos`. Setelah berhasil, aplikasi mengarahkan pengguna kembali ke halaman daftar Todo.
+
+### 7.2. Read
+
+`index.php` mengambil data dari database menggunakan query `SELECT`. Data difilter berdasarkan scope yang sedang dipilih.
+
+- Personal: data difilter berdasarkan `scope = 'personal'` dan `owner_key` sesi pengguna.
+- Shared: data difilter berdasarkan `scope = 'shared'`.
+
+Todo yang dipilih ditampilkan pada panel detail.
+
+### 7.3. Update
+
+Pengguna dapat mengubah judul, deskripsi, status, dan waktu notifikasi Todo melalui form detail.
+
+Data perubahan diproses oleh `functions.php` dan disimpan menggunakan query `UPDATE`.
+
+### 7.4. Delete
+
+Pengguna dapat menghapus Todo melalui tombol Delete. Aplikasi memproses permintaan menggunakan query `DELETE` berdasarkan ID Todo dan batasan scope atau kepemilikan yang berlaku.
+
+### 7.5. Keamanan Query
+
+Aplikasi menggunakan PDO prepared statements untuk menjalankan query dengan parameter terikat. Pendekatan ini membantu mencegah SQL injection.
+
+Selain itu, nilai yang ditampilkan pada halaman HTML di-escape menggunakan `htmlspecialchars()` untuk membantu mencegah injeksi HTML.
+
+## 8. Modularisasi PHP
+
+Migrasi dari HTML ke PHP dilakukan dengan memisahkan bagian-bagian aplikasi sesuai tanggung jawabnya.
+
+1. `config.php` menangani koneksi database dan session.
+2. `menubar.php` menangani navigasi.
+3. `content.php` menangani tampilan konten dan form.
+4. `functions.php` menangani pemrosesan operasi CRUD.
+5. `index.php` menjadi halaman utama yang menggabungkan komponen tersebut.
+
+Dengan modularisasi ini, perubahan pada satu bagian dapat dilakukan tanpa harus menulis ulang keseluruhan halaman.
+
+## 9. File Handling
+
+Fitur file handling menggunakan fungsi PHP untuk menerima dan menyimpan gambar yang diunggah melalui form.
+
+Alur proses upload:
+
+1. Pengguna memilih file gambar pada form Create Todo.
+2. Form mengirim data menggunakan metode `POST` dengan `multipart/form-data`.
+3. PHP memeriksa status upload, tipe MIME, dan ukuran file.
+4. File disimpan di folder `uploads/` menggunakan nama file yang dibuat secara acak.
+5. Lokasi file disimpan pada kolom `image_path`.
+6. Gambar ditampilkan pada panel detail Todo.
+
+Jenis gambar yang diperbolehkan adalah JPEG, PNG, GIF, dan WebP dengan ukuran maksimal 2 MB.
+
+## 10. Instalasi dan Cara Menjalankan
+
+### 10.1. Persiapan
+
+Pastikan perangkat telah memiliki:
+- Laragon.
+- PHP yang tersedia melalui Laragon.
+- MySQL.
+- Browser web.
+
+### 10.2. Menempatkan Proyek
+
+1. Salin folder proyek `E04` ke direktori web Laragon:
+
+   ```text
+   C:\laragon\www\E04
+   ```
+
+2. Pastikan file PHP, CSS, JavaScript, dan `data.sql` berada pada lokasi yang benar.
+3. Pastikan folder `uploads/` tersedia dan dapat ditulisi oleh PHP.
+
+### 10.3. Menyiapkan Database
+
+Jalankan Laragon dan pastikan layanan MySQL aktif.
+
+Buka terminal Laragon, kemudian jalankan:
+
+```bash
+mysql -u root < "C:\laragon\www\E04\data.sql"
 ```
 
-### Deskripsi
+Perintah tersebut mengimpor file SQL yang membuat database, tabel, dan dummy data.
 
-Deskripsi tugas menggunakan `<textarea>` agar dapat menampung teks yang lebih panjang.
+Perintah di atas mengasumsikan MySQL lokal menggunakan akun `root` tanpa password. Jika konfigurasi berbeda, sesuaikan kredensialnya.
 
-```html
-<div class="form-group">
-    <label for="description">Description</label>
-    <textarea
-        id="description"
-        name="description"
-        rows="6"
-    >Practice semantic HTML elements</textarea>
-</div>
-```
+### 10.4. Konfigurasi Koneksi
 
-### Status
+Periksa file `config.php` dan pastikan konfigurasi koneksi database sesuai dengan lingkungan lokal.
 
-Status Todo dibuat menggunakan `<select>` sehingga pengguna dapat memilih salah satu status yang tersedia.
+Parameter yang digunakan meliputi:
+- Host database.
+- Nama database: `todo_e04`.
+- Username MySQL.
+- Password MySQL.
 
-```html
-<div class="form-group">
-    <label for="status">Status</label>
-    <select id="status" name="status">
-        <option value="todo">To Do</option>
-        <option value="progress">In Progress</option>
-        <option value="done">Done</option>
-    </select>
-</div>
-```
+### 10.5. Menjalankan Aplikasi
 
-### Tombol Aksi
-
-Form juga memiliki tombol untuk menghapus Todo dan menyimpan perubahan.
-
-```html
-<div class="form-actions">
-    <button type="button">Delete</button>
-    <button type="submit">Save Changes</button>
-</div>
-```
-
-Selain editor pada panel kanan, terdapat form terpisah untuk membuat Todo baru.
-
-```html
-<section class="new-todo">
-    <h2>Create New Todo</h2>
-
-    <form>
-        ...
-        <button type="submit">Create Todo</button>
-    </form>
-</section>
-```
-
-Form tersebut dibuat sebagai komponen terpisah sesuai dengan kriteria tugas.
-
----
-
-## 4. Static Todo List
-
-Daftar Todo pada halaman menggunakan data dummy atau data statis. Data tidak berasal dari database maupun JavaScript.
-
-Contoh salah satu Todo:
-
-```html
-<li class="todo-item active">
-    <input type="checkbox" id="todo1">
-
-    <label for="todo1">
-        <strong>Learn HTML</strong>
-        <span>Practice semantic HTML elements</span>
-    </label>
-</li>
-```
-
-Beberapa Todo yang digunakan pada halaman antara lain:
-
-1. Learn HTML
-2. Learn CSS
-3. Finish assignment
-4. Read documentation
-
-Setiap item Todo memiliki checkbox, judul, dan deskripsi singkat.
-
-Class `active` digunakan untuk memberikan tampilan berbeda pada Todo yang sedang dipilih.
-
-```css
-.todo-item.active {
-    border-color: #222;
-    background-color: #f2f2f2;
-}
-```
-
----
-
-## 5. Styling dan Layout
-
-Selain mengatur layout utama, CSS digunakan untuk memberikan tampilan pada komponen halaman seperti panel, tombol, input, dan daftar Todo.
-
-Panel dibuat menggunakan background putih, border radius, padding, dan shadow.
-
-```css
-.todo-panel,
-.detail-panel {
-    background-color: white;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-```
-
-Form juga menggunakan Flexbox untuk menyusun elemen input secara vertikal.
-
-```css
-.todo-editor {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-```
-
-Sementara itu, bagian header panel menggunakan Flexbox agar judul dan tombol dapat ditempatkan pada sisi yang berbeda.
-
-```css
-.panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-```
-
----
-
-## 6. Responsive Design
-
-Tampilan dibuat responsive menggunakan **media query**. Ketika lebar layar berada di bawah atau sama dengan `768px`, layout dua kolom akan berubah menjadi satu kolom.
-
-```css
-@media (max-width: 768px) {
-
-    main {
-        grid-template-columns: 1fr;
-    }
-
-}
-```
-
-Pada desktop, tampilannya menjadi:
+Buka browser dan akses:
 
 ```text
-┌──────────────┬───────────────────┐
-│  My Todos    │   Todo Detail     │
-│              │                   │
-└──────────────┴───────────────────┘
+http://localhost/E04/
 ```
 
-Sedangkan pada perangkat mobile, kedua panel disusun secara vertikal:
+Aplikasi seharusnya menampilkan halaman Todo App dengan menu Personal dan Shared.
 
-```text
-┌──────────────────────┐
-│      My Todos        │
-└──────────────────────┘
-          ↓
-┌──────────────────────┐
-│     Todo Detail      │
-└──────────────────────┘
-```
+## 11. Pengujian Aplikasi
 
-Ukuran padding dan margin juga disesuaikan agar konten menyesuaikandigunakan pada layar yang lebih kecil.
+Pengujian dilakukan untuk memastikan setiap fitur utama berjalan sesuai fungsinya.
 
-```css
-@media (max-width: 768px) {
+| No. | Pengujian | Hasil yang Diharapkan |
+|---|---|---|
+| 1 | Membuka halaman utama | Halaman Todo App ditampilkan. |
+| 2 | Memilih Personal | Daftar Todo pribadi ditampilkan sesuai session. |
+| 3 | Memilih Shared | Daftar Todo bersama ditampilkan. |
+| 4 | Membuat Todo | Data baru tersimpan dan muncul pada daftar. |
+| 5 | Membuka detail Todo | Detail Todo yang dipilih ditampilkan. |
+| 6 | Mengubah Todo | Perubahan data tersimpan di database. |
+| 7 | Menghapus Todo | Data yang dipilih dihapus dari database. |
+| 8 | Refresh halaman | Data yang telah tersimpan tetap tersedia. |
+| 9 | Mengunggah gambar | Gambar disimpan dan dapat ditampilkan. |
+| 10 | Mengaktifkan Dark Mode | Tema halaman berubah dan preferensi tersimpan. |
+| 11 | Mengubah ukuran layar | Layout menyesuaikan ukuran layar. |
 
-    header {
-        padding: 20px;
-    }
+Hasil pengujian akhir perlu disesuaikan dengan hasil pengujian aktual pada lingkungan lokal.
 
-    main {
-        grid-template-columns: 1fr;
-        padding: 0 16px;
-    }
+## 12. Catatan Implementasi
 
-    .form-actions {
-        flex-direction: column;
-    }
+- Identitas Personal menggunakan session dan `owner_key`, bukan sistem autentikasi akun dengan username dan password.
+- Menu Shared menggunakan data bersama dalam satu database. Pada implementasi ini, operasi terhadap Todo Shared tidak dibatasi berdasarkan akun pengguna.
+- Kolom `notification_time` menyimpan waktu yang dipilih pada form. Penyimpanan waktu tersebut tidak dengan sendirinya menjamin notifikasi otomatis dikirim oleh server.
+- Fitur upload gambar diterapkan pada proses Create Todo. Penggantian gambar saat Update dan penghapusan file fisik ketika Todo dihapus belum menjadi bagian dari implementasi ini.
+- Folder `uploads/` perlu disertakan saat memindahkan proyek apabila gambar yang sudah diunggah ingin tetap tersedia.
 
-    .form-actions button {
-        width: 100%;
-    }
+## 13. Kesimpulan
 
-}
-```
+E04 — The Iron Citadel mengembangkan Todo App dari aplikasi berbasis browser menjadi aplikasi web berbasis PHP dan MySQL. Melalui modularisasi PHP, data Todo dapat dikelola menggunakan operasi CRUD dan dikelompokkan ke dalam menu Personal dan Shared.
 
-Dengan responsive design tersebut, halaman tetap dapat digunakan baik pada desktop maupun perangkat mobile.
+Implementasi file handling menambahkan kemampuan untuk mengunggah gambar pada Todo, sedangkan CSS dan JavaScript mempertahankan antarmuka responsif serta Dark Mode.
 
----
-
-## 7. External CSS
-
-CSS dibuat pada file terpisah bernama `style.css`. File HTML hanya digunakan untuk menyusun struktur halaman, sedangkan tampilan halaman diatur oleh file CSS.
-
-Hubungan antara kedua file dibuat menggunakan `<link>` pada bagian `<head>`.
-
-```html
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-```
-
----
-
-## 7. Dokumentasi
-
-<img width="1917" height="1078" alt="Screenshot 2026-09-14 194044" src="https://github.com/user-attachments/assets/46edf94b-c118-4b14-953e-7eabc2536a60" />
-
-<img width="758" height="661" alt="Screenshot 2026-09-14 194112" src="https://github.com/user-attachments/assets/ed94a62d-e69e-453c-9ede-c03ab60ab08a" />
-
-<img width="722" height="978" alt="Screenshot 2026-09-14 194129" src="https://github.com/user-attachments/assets/78de9cf2-cfd2-4493-b847-82659ceca6ec" />
-
-<img width="1917" height="975" alt="Screenshot 2026-09-14 194058" src="https://github.com/user-attachments/assets/74e80f11-02ac-40ea-9a37-64dc908262be" />
-
+Proyek ini menerapkan konsep dasar pengembangan web sisi server, integrasi database, pemrosesan form, modularisasi kode, dan pengelolaan file menggunakan PHP.
