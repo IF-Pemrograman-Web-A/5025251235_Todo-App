@@ -347,7 +347,9 @@ Pengujian bertujuan memastikan:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Application → Manifest]`
+<img width="1913" height="792" alt="Screenshot 2026-11-02 105141" src="https://github.com/user-attachments/assets/4689acab-e9bf-4fc5-adfc-2939e6bcb3e0" />
+
+<img width="1901" height="712" alt="Screenshot 2026-11-02 105205" src="https://github.com/user-attachments/assets/5db66233-0716-4390-a57f-ac2782eaab79" />
 
 ### 8.2. Pengujian Service Worker
 
@@ -362,7 +364,7 @@ Pengujian bertujuan memastikan:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Service Workers]`
+<img width="1917" height="965" alt="Screenshot 2026-11-02 111045" src="https://github.com/user-attachments/assets/7fca0a89-36f8-4d23-9d8e-cf383643d464" />
 
 ### 8.3. Pengujian Cache Storage
 
@@ -377,7 +379,7 @@ Pengujian bertujuan memastikan:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Cache Storage]`
+<img width="1917" height="1028" alt="Screenshot 2026-11-02 111341" src="https://github.com/user-attachments/assets/8f9d3d90-9b82-4e05-ad7b-36b5c5ea3a07" />
 
 ### 8.4. Pengujian Offline
 
@@ -398,7 +400,7 @@ Aplikasi dapat menyediakan halaman offline tanpa mengambilnya kembali dari serve
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot offline.html ketika Network dalam kondisi Offline]`
+<img width="1917" height="1027" alt="Screenshot 2026-11-02 111136" src="https://github.com/user-attachments/assets/ae77700a-171d-4be2-89f2-ea8adf2c6bf4" />
 
 ### 8.5. Pengujian Install Button
 
@@ -410,7 +412,7 @@ Dialog instalasi aplikasi dapat ditampilkan melalui tombol Install App.
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot proses instalasi atau aplikasi yang telah ter-install]`
+<img width="1592" height="1078" alt="Screenshot 2026-11-02 152147" src="https://github.com/user-attachments/assets/ebb1cf74-e098-470f-a87f-57e86a480e0e" />
 
 ## 9. Catatan Implementasi
 
