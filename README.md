@@ -540,7 +540,7 @@ Request: `GET /api/todos.php?scope=shared&id=abc`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 400 ID tidak valid]`
+<img width="877" height="781" alt="Screenshot 2026-11-16 180904" src="https://github.com/user-attachments/assets/f7a46f91-0cf4-49fd-b958-7b604419d0b5" />
 
 #### 10.3.2. 400 — Scope Tidak Valid
 
@@ -550,7 +550,7 @@ Request: `GET /api/todos.php?scope=abc`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 400 scope tidak valid]`
+<img width="858" height="752" alt="Screenshot 2026-11-16 181135" src="https://github.com/user-attachments/assets/d17b7b2f-a3f5-4290-8f15-f6437a2e9529" />
 
 #### 10.3.3. 400 — JSON Tidak Valid
 
@@ -560,7 +560,7 @@ Request: `POST /api/todos.php?scope=shared` dengan `Content-Type: application/js
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 400 JSON tidak valid]`
+<img width="873" height="750" alt="Screenshot 2026-11-16 181502" src="https://github.com/user-attachments/assets/548d668d-b101-4036-b729-068065f4a494" />
 
 #### 10.3.4. 404 — Todo Tidak Ditemukan
 
@@ -570,7 +570,7 @@ Request: `GET /api/todos.php?scope=shared&id=99999`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 404]`
+<img width="866" height="752" alt="Screenshot 2026-11-16 181629" src="https://github.com/user-attachments/assets/fab4a1b7-783a-4410-9ada-aeca457e972a" />
 
 #### 10.3.5. 405 — Method Tidak Didukung
 
@@ -580,7 +580,7 @@ Request: `OPTIONS /api/todos.php?scope=shared`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 405 beserta header Allow]`
+<img width="865" height="757" alt="Screenshot 2026-11-16 181808" src="https://github.com/user-attachments/assets/c08db8dc-5856-4cfb-bf37-277c74a42c39" />
 
 #### 10.3.6. 415 — Content-Type Bukan JSON
 
@@ -590,7 +590,7 @@ Request: `PUT /api/todos.php?scope=shared&id=1` dengan body bertipe **raw → Te
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 415]`
+<img width="868" height="761" alt="Screenshot 2026-11-16 182031" src="https://github.com/user-attachments/assets/26a2e718-2775-4365-befd-446924e1ed2a" />
 
 #### 10.3.7. 422 — Validasi Gagal (Title Kosong)
 
@@ -607,7 +607,7 @@ Request: `POST /api/todos.php?scope=shared` dengan body JSON:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 422 title kosong]`
+<img width="872" height="840" alt="Screenshot 2026-11-16 182204" src="https://github.com/user-attachments/assets/b0c74bad-8b84-4c6a-af75-e1bd4552ee0b" />
 
 #### 10.3.8. 422 — Validasi Gagal (Status Tidak Valid)
 
@@ -624,7 +624,7 @@ Request: `POST /api/todos.php?scope=shared` dengan body JSON:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 422 status tidak valid]`
+<img width="861" height="831" alt="Screenshot 2026-11-16 182407" src="https://github.com/user-attachments/assets/255912ae-96fc-4a22-860a-df8131998182" />
 
 ### 10.4. Pengujian Autentikasi API Key
 
