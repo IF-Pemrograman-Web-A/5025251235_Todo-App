@@ -454,17 +454,17 @@ Request: `GET /api/todos.php?scope=shared`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman GET daftar Todo]`
+<img width="1447" height="988" alt="Screenshot 2026-11-16 174934" src="https://github.com/user-attachments/assets/a191d8f6-aa8b-4049-842f-364dcd2bdb2b" />
 
 #### 10.2.2. GET — Detail Todo (200 OK)
 
-Request: `GET /api/todos.php?scope=shared&id=1`
+Request: `GET /api/todos.php?scope=shared&id=9`
 
 **Hasil yang diharapkan:** Status `200 OK` dan body berisi data satu Todo.
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman GET detail Todo]`
+<img width="866" height="975" alt="Screenshot 2026-11-16 175627" src="https://github.com/user-attachments/assets/5edba7d7-79ba-449d-8be4-2f48eb124df0" />
 
 #### 10.2.3. POST — Membuat Todo (201 Created)
 
@@ -482,9 +482,9 @@ Request: `POST /api/todos.php?scope=shared` dengan body JSON:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman POST (status 201 dan body)]`
+<img width="861" height="1000" alt="Screenshot 2026-11-16 175847" src="https://github.com/user-attachments/assets/d9474b99-bf62-435e-8cf6-87224456c6e5" />
 
-`[Masukkan screenshot tab Headers pada response yang menampilkan header Location]`
+<img width="868" height="958" alt="Screenshot 2026-11-16 180039" src="https://github.com/user-attachments/assets/549f9881-0609-4111-8b19-7710698cf427" />
 
 #### 10.2.4. PUT — Mengganti Data Todo (200 OK)
 
@@ -502,7 +502,7 @@ Request: `PUT /api/todos.php?scope=shared&id={id Todo baru}` dengan body JSON:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman PUT]`
+<img width="860" height="992" alt="Screenshot 2026-11-16 180317" src="https://github.com/user-attachments/assets/f2f0e619-f9d4-4bae-a4f9-92cccd711e91" />
 
 #### 10.2.5. PATCH — Mengubah Sebagian Data Todo (200 OK)
 
@@ -518,7 +518,7 @@ Request: `PATCH /api/todos.php?scope=shared&id={id Todo baru}` dengan body JSON:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman PATCH]`
+<img width="855" height="995" alt="Screenshot 2026-11-16 180506" src="https://github.com/user-attachments/assets/cd257338-8d7f-4c61-b195-6e486232de4c" />
 
 #### 10.2.6. DELETE — Menghapus Todo (204 No Content)
 
@@ -528,7 +528,7 @@ Request: `DELETE /api/todos.php?scope=shared&id={id Todo baru}`
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman DELETE (status 204)]`
+<img width="847" height="668" alt="Screenshot 2026-11-16 180616" src="https://github.com/user-attachments/assets/b261e6a1-9853-40c9-b2fc-26ac5ab2cae1" />
 
 ### 10.3. Pengujian Response Error
 
