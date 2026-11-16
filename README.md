@@ -636,7 +636,7 @@ Request: `GET /api/todos.php?scope=shared` **tanpa** header `X-API-Key`.
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 401]`
+<img width="866" height="757" alt="Screenshot 2026-11-16 182534" src="https://github.com/user-attachments/assets/fb5e2d02-ff39-4b0a-b5d3-8006098ec674" />
 
 #### 10.4.2. 403 — API Key Salah
 
@@ -646,7 +646,7 @@ Request: `GET /api/todos.php?scope=shared` dengan `X-API-Key` yang salah.
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Postman 403]`
+<img width="865" height="757" alt="Screenshot 2026-11-16 182750" src="https://github.com/user-attachments/assets/f270ded7-0982-49c6-ab06-88a7c1c690fe" />
 
 ### 10.5. Pengujian Antarmuka
 
@@ -658,7 +658,7 @@ Pengujian dilakukan melalui `http://localhost/E06/` dengan `DevTools → Network
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot halaman aplikasi beserta tab Network yang menampilkan request GET]`
+<img width="1145" height="1078" alt="Screenshot 2026-11-16 183312" src="https://github.com/user-attachments/assets/2042dabd-ab61-4aaf-aaec-05119983486f" />
 
 #### 10.5.2. Membuat Todo
 
@@ -666,7 +666,7 @@ Pengujian dilakukan melalui `http://localhost/E06/` dengan `DevTools → Network
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot aplikasi setelah Create beserta request POST di tab Network]`
+<img width="1141" height="1078" alt="Screenshot 2026-11-16 183433" src="https://github.com/user-attachments/assets/0b5da2cc-a218-48cf-b20e-b332b2a0be16" />
 
 #### 10.5.3. Mengubah Todo
 
@@ -674,7 +674,7 @@ Pengujian dilakukan melalui `http://localhost/E06/` dengan `DevTools → Network
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot aplikasi setelah Save Changes beserta request PUT di tab Network]`
+<img width="1142" height="1035" alt="Screenshot 2026-11-16 183558" src="https://github.com/user-attachments/assets/575db2cb-bf1e-4a4d-bb7e-e0b22fb8b30e" />
 
 #### 10.5.4. Menghapus Todo
 
@@ -682,7 +682,7 @@ Pengujian dilakukan melalui `http://localhost/E06/` dengan `DevTools → Network
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot aplikasi setelah Delete beserta request DELETE di tab Network]`
+<img width="1141" height="1078" alt="Screenshot 2026-11-16 183651" src="https://github.com/user-attachments/assets/08e027fb-6c5b-4475-bfdb-53cd54f73d8f" />
 
 #### 10.5.5. Menampilkan Pesan Error dari API
 
@@ -692,7 +692,7 @@ Pengujian dilakukan dengan mengisi title hanya dengan spasi pada form Create ata
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot pesan error pada antarmuka]`
+<img width="1145" height="1078" alt="Screenshot 2026-11-16 183824" src="https://github.com/user-attachments/assets/ed8dac8c-9fcf-4824-bee4-c6197e1ec90b" />
 
 ### 10.6. Pengujian Service Worker dan Cache
 
@@ -706,7 +706,7 @@ Cache diperiksa melalui:
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot Cache Storage]`
+<img width="1140" height="1011" alt="Screenshot 2026-11-16 184033" src="https://github.com/user-attachments/assets/edb86cea-b89b-43c2-9164-b9852a1ce539" />
 
 #### 10.6.2. Request API Tidak Di-cache
 
@@ -716,7 +716,7 @@ Pengujian dilakukan melalui `DevTools → Network`, lalu memeriksa request `todo
 
 **Bukti Pengujian:**
 
-`[Masukkan screenshot tab Network yang menampilkan request api/todos.php]`
+<img width="1125" height="995" alt="Screenshot 2026-11-16 184507" src="https://github.com/user-attachments/assets/b1f576a3-5348-4e35-8b43-58fc4d27c3af" />
 
 ## 11. Catatan Implementasi
 
